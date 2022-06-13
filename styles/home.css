@@ -1,1 +1,119 @@
 /* CSS for home page (index.html) */
+
+main {
+    display: grid;
+    grid-template-areas:
+        "poll"
+        "list"
+    ;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+@media (min-width: 800px) {
+    main {
+        grid-template-areas: "poll list";
+        grid-template-columns: 400px 1fr;
+        gap: 10px;
+    }
+}
+
+.panel {
+    background-color: rgb(187, 223, 255);
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+label {
+    display: contents;
+}
+
+.action {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.poll-display {
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+        "question question"
+        "option1  option2"
+        "votes1   votes2"
+    ;
+    gap: 10px;
+}
+
+.question {
+    grid-area: question;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+.votes {
+    font-family: monospace;
+    font-size: 3em;
+}
+.option.one {
+    grid-area: option1;
+}
+.option.two {
+    grid-area: option2;
+}
+.votes.one {
+    grid-area: votes1;
+}
+.votes.two {
+    grid-area: votes2;
+}
+
+.poll-voter {
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+        "vote1    vote2"
+        "unvote1  unvote2"
+        "end-poll end-poll"
+    ;
+    justify-items: center;
+    gap: 10px;
+}
+
+.vote {
+    font-size: 2em;
+}
+.vote.one {
+    grid-area: vote1;
+}
+.vote.two {
+    grid-area: vote2;
+}
+.unvote.one {
+    grid-area: unvote1;
+}
+.unvote.two {
+    grid-area: unvote2;
+}
+.end-poll {
+    grid-area: end-poll;
+    justify-self: stretch;
+}
+
+.poll-list {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+    justify-items: center;
+}
+
+.poll-list div {
+    max-width: 300px;
+}
