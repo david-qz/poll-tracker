@@ -1,22 +1,7 @@
-## The Golden Rule:
+# Poll Tracker App
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+## Planning
 
-1. Limit Work in Progress (WIP)
-1. Validate each line of code before moving forward
-1. Keep it Simple Simon (KISS)
+![](assets/readme/wireframe.png)
 
-## Making a plan
-
-1. Make a drawing of your app. **Simple "wireframes"**
-1. Once you have a drawing, **name the HTML elements** you'll need to realize your vision**
-1. Determine the Components (sections) of your app.
-1. Within each component:
-    - For each HTML element ask: **Why do I need this?**
-    - Does this element need **static content**, or is the content **dynamic state**?
-    - If dynamic, what is **state** and what is it called
-    - **Find all the 'events'** (user clicks, form submit, on load etc) in your app. 
-1. For events, ask one by one, "What happens when" for each of these events. Does any state change?
-1. Once we know the _why_ of elements, state, and events -- think about how to implement the "Why" as a "How"
-1. Think about how to **validate each of your features** according to a Definition of Done
-1. Consider what features **_depend_ on what other features**. Use this dependency logic to figure out what order to complete tasks.
+[Click here for a closer look](https://david501909.invisionapp.com/freehand/Untitled-Mp6IjgXnL?dsid_h=a1e549fd14162d0bcbed07f66f1793457ea0b8b9968e7bbae04369dfa04baae9&uid_h=387e37cfe616e08bd244d936d13da83c960878118835f20c62919dce906117f1)
