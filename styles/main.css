@@ -8,7 +8,7 @@
 
 body {
     height: 100%;
-    padding-bottom: 30px;
+    padding: 10px;
     font-family: 'Rubik', san-serif;
 }
 
@@ -33,4 +33,16 @@ footer {
     display: flex;
     justify-content: flex-end;
     background-color: var(--footer-background);
+}
+
+h1 {
+    margin: 10px 0 10px 10px;
+}
+
+h2 {
+    margin: 8px 0 8px 10px;
+}
+
+h3 {
+    margin: 5px 0 5px 10px;
 }

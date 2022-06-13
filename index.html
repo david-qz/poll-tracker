@@ -15,12 +15,80 @@
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Poll Tracker</h1>
     </header>
 
-    <main></main>
+    <main>
+        <section>
+            <h2>Current Poll</h2>
 
-    <footer>&copy;2021 Aspiring Software Developer</footer>
+            <section id="new-poll" class="panel">
+                <h3>Start a New Poll</h3>
+                <form>
+                    <label>
+                        Question
+                        <input required name="question">
+                    </label>
+                    <label>
+                        First Option
+                        <input required name="option1">
+                    </label>
+                    <label>
+                        Second Option
+                        <input required name="option2">
+                    </label>
+                    <label>
+                        <input type="submit" class="action">
+                    </label>
+                </form>
+            </section>
+
+            <section class="poll-display panel">
+                <span class="question">Would you rather...</span>
+                <span class="option one">Something really cool with a big downside?</span>
+                <span class="votes one">0</span>
+                <span class="option two">Something kind of cool with a small downside?</span>
+                <span class="votes two">0</span>
+            </section>
+
+            <section class="poll-voter panel">
+                <button class="vote one">+</button>
+                <button class="vote two">+</button>
+                <button class="unvote one">-</button>
+                <button class="unvote two">-</button>
+                <button class="end-poll action">End Poll</button>
+            </section>
+
+        </section>
+
+        <section>
+            <h2>Completed Polls</h2>
+            <div class="poll-list panel">
+                <div class="poll-display">
+                    <span class="question">Would you rather...</span>
+                    <span class="option one">Something really cool with a big downside?</span>
+                    <span class="votes one">0</span>
+                    <span class="option two">Something kind of cool with a small downside?</span>
+                    <span class="votes two">0</span>
+                </div>
+                <div class="poll-display">
+                    <span class="question">Would you rather...</span>
+                    <span class="option one">Something really cool with a big downside?</span>
+                    <span class="votes one">0</span>
+                    <span class="option two">Something kind of cool with a small downside?</span>
+                    <span class="votes two">0</span>
+                </div>
+                <div class="poll-display">
+                    <span class="question">Would you rather...</span>
+                    <span class="option one">Something really cool with a big downside?</span>
+                    <span class="votes one">0</span>
+                    <span class="option two">Something kind of cool with a small downside?</span>
+                    <span class="votes two">0</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <script type="module" src="app.js"></script>
 </body>
