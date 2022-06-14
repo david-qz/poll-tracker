@@ -18,6 +18,10 @@ main {
     }
 }
 
+.hidden {
+    display: none;
+}
+
 .panel {
     background-color: rgb(187, 223, 255);
     border: 1px solid black;
