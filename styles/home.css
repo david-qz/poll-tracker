@@ -1,5 +1,9 @@
 /* CSS for home page (index.html) */
 
+:root {
+    --poll-display-width: 400px;
+}
+
 main {
     display: grid;
     grid-template-areas:
@@ -13,7 +17,7 @@ main {
 @media (min-width: 800px) {
     main {
         grid-template-areas: "poll list";
-        grid-template-columns: 400px 1fr;
+        grid-template-columns: var(--poll-display-width) 1fr;
         gap: 10px;
     }
 }
@@ -52,6 +56,8 @@ label {
         "option1  option2"
         "votes1   votes2"
     ;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     gap: 10px;
 }
 
@@ -86,6 +92,7 @@ label {
         "unvote1  unvote2"
         "end-poll end-poll"
     ;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 10px;
 }
@@ -113,11 +120,11 @@ label {
 .poll-list {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--poll-display-width), 1fr));
     justify-content: center;
     justify-items: center;
 }
 
 .poll-list div {
-    max-width: 300px;
+    max-width: var(--poll-display-width)
 }
