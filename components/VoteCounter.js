@@ -1,6 +1,6 @@
 import createPollDisplay from './PollDisplay.js';
 
-export default function createVoter(root) {
+export default function createVoteCounter(root) {
     // reference DOM
     const pollDisplay = root.querySelector('.poll-display');
 
