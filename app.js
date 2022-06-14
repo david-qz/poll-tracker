@@ -9,8 +9,6 @@ import createPollList from './components/PollList.js';
 import state, { newPoll, vote, unvote, endPoll } from './state.js';
 
 // Create each component:
-// - pass in the root element via querySelector
-// - pass any needed handler functions as properties of an actions object
 const PollForm = createPollForm(document.querySelector('#new-poll'), {
     handleNewPoll: (question, choice1, choice2) => {
         newPoll(question, choice1, choice2);

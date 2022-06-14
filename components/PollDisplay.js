@@ -1,3 +1,6 @@
+// This is a not a true component in the scheme of the others because it
+// doesn't "own" it's root. It's really a helper function that renders
+// DOM into some element owned by another component.
 export default function createPollDisplay(poll, root) {
     if (!poll) {
         return;
