@@ -2,6 +2,7 @@
 
 // import component creators
 import createNewPoll from './components/NewPoll.js';
+import createVoter from './components/Voter.js';
 
 // import state and dispatch functions
 import state, { newPoll } from './state.js';
@@ -16,9 +17,12 @@ const NewPoll = createNewPoll(document.querySelector('#new-poll'), {
     }
 });
 
+const Voter = createVoter(document.querySelector('#voter'));
+
 // Roll-up display function that renders (calls with state) each component
 function display() {
     NewPoll({ currentPoll: state.currentPoll });
+    Voter({ currentPoll: state.currentPoll });
 }
 
 // Call display on page load
