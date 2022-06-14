@@ -1,4 +1,4 @@
-export default function createNewPoll(root, { handleNewPoll }) {
+export default function createPollForm(root, { handleNewPoll }) {
     // reference DOM
     const form = root.querySelector('form');
 
