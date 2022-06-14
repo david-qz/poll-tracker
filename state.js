@@ -25,3 +25,25 @@ export function newPoll(question, option1, option2) {
         },
     };
 }
+
+export function vote(option) {
+    if (state.currentPoll) {
+        if (option === 1) {
+            state.currentPoll.option1.votes++;
+        }
+        else if (option === 2) {
+            state.currentPoll.option2.votes++;
+        }
+    }
+}
+
+export function unvote(option) {
+    if (state.currentPoll) {
+        if (option === 1) {
+            state.currentPoll.option1.votes--;
+        }
+        else if (option === 2) {
+            state.currentPoll.option2.votes--;
+        }
+    }
+}
