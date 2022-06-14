@@ -7,8 +7,10 @@ export default function createPollList(root) {
 
     // should return its component render function
     return ({ polls }) => {
-        root.innerHTML = '';
+        const hidden = !polls.length;
+        root.classList.toggle('hidden', hidden);
 
+        root.innerHTML = '';
         for (const poll of polls) {
             root.append(createPollDisplay(poll));
         }
