@@ -12,3 +12,16 @@ initialize();
 export default state;
 
 // export dispatch functions that modify state
+export function newPoll(question, option1, option2) {
+    state.currentPoll = {
+        question,
+        option1: {
+            response: option1,
+            votes: 0,
+        },
+        option2: {
+            response: option2,
+            votes: 0,
+        },
+    };
+}
