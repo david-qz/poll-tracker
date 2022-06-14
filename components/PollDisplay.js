@@ -17,10 +17,10 @@ export default function createPollDisplay(poll, root) {
     };
 
     appendSpan(poll.question, 'question');
-    appendSpan(poll.option1.response, 'option one');
-    appendSpan(poll.option1.votes, 'votes one');
-    appendSpan(poll.option2.response, 'option two');
-    appendSpan(poll.option2.votes, 'votes two');
+    appendSpan(poll.choices[0].response, 'option one');
+    appendSpan(poll.choices[0].votes, 'votes one');
+    appendSpan(poll.choices[1].response, 'option two');
+    appendSpan(poll.choices[1].votes, 'votes two');
 
     return root;
 }
