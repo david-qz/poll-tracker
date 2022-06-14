@@ -1,6 +1,6 @@
 import state, {
     initialize,
-    // import dispatch functions
+    newPoll,
 } from '../state.js';
 
 // make sure state is at known starting point
@@ -8,14 +8,25 @@ QUnit.module('state', { beforeEach: initialize });
 
 const test = QUnit.test;
 
-test('the first state test...', (expect) => {
-    // what is the initial expected state?
+test('initial state', (expect) => {
+    expect.deepEqual(state, {
+        currentPoll: null,
+        completedPolls: [],
+    });
+});
 
-    // use the action
+test('newPoll()', (expect) => {
+    newPoll('pizza', 'yes', 'no');
 
-    // what should the state be now?
-
-
-    // remove this line when starting your test
-    expect.deepEqual(state, {});
+    expect.deepEqual(state.currentPoll, {
+        question: 'pizza',
+        option1: {
+            response: 'yes',
+            votes: 0,
+        },
+        option2: {
+            response: 'no',
+            votes: 0,
+        },
+    });
 });
