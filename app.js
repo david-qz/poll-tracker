@@ -5,7 +5,7 @@ import createPollForm from './components/PollForm.js';
 import createVoteCounter from './components/VoteCounter.js';
 
 // import state and dispatch functions
-import state, { newPoll } from './state.js';
+import state, { newPoll, vote, unvote, endPoll } from './state.js';
 
 // Create each component:
 // - pass in the root element via querySelector
@@ -17,7 +17,20 @@ const PollForm = createPollForm(document.querySelector('#new-poll'), {
     }
 });
 
-const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'));
+const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
+    handleVote: optionNumber => {
+        vote(optionNumber);
+        display();
+    },
+    handleUnvote: optionNumber => {
+        unvote(optionNumber);
+        display();
+    },
+    handleEndPoll: () => {
+        endPoll();
+        display();
+    },
+});
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
