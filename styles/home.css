@@ -1,7 +1,7 @@
 /* CSS for home page (index.html) */
 
 :root {
-    --poll-display-width: 400px;
+    --poll-display-width: 350px;
 }
 
 main {
@@ -14,7 +14,7 @@ main {
     gap: 10px;
 }
 
-@media (min-width: 875px) {
+@media (min-width: 800px) {
     main {
         grid-template-areas: "poll list";
         grid-template-columns: var(--poll-display-width) 1fr;
@@ -114,15 +114,15 @@ label {
 }
 
 .poll-list {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(var(--poll-display-width), 1fr));
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     justify-items: center;
+    align-items: center;
 }
 
 .poll-list div {
-    max-width: var(--poll-display-width)
+    width: var(--poll-display-width)
 }
 
 .hidden {
