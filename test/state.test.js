@@ -23,77 +23,85 @@ test('newPoll()', (expect) => {
 
     expect.deepEqual(state.currentPoll, {
         question: 'pizza',
-        option1: {
-            response: 'yes',
-            votes: 0,
-        },
-        option2: {
-            response: 'no',
-            votes: 0,
-        },
+        choices: [
+            {
+                response: 'yes',
+                votes: 0,
+            },
+            {
+                response: 'no',
+                votes: 0,
+            }
+        ],
     });
 });
 
 test('vote()', expect => {
     newPoll('pizza', 'yes', 'no');
 
+    vote(0);
+    vote(0);
     vote(1);
-    vote(1);
-    vote(2);
 
     expect.deepEqual(state.currentPoll, {
         question: 'pizza',
-        option1: {
-            response: 'yes',
-            votes: 2,
-        },
-        option2: {
-            response: 'no',
-            votes: 1,
-        },
+        choices: [
+            {
+                response: 'yes',
+                votes: 2,
+            },
+            {
+                response: 'no',
+                votes: 1,
+            }
+        ],
     });
 });
 
 test('unvote()', expect => {
     newPoll('pizza', 'yes', 'no');
 
+    vote(0);
+    vote(0);
     vote(1);
-    vote(1);
-    vote(2);
 
+    unvote(0);
     unvote(1);
-    unvote(2);
 
     expect.deepEqual(state.currentPoll, {
         question: 'pizza',
-        option1: {
-            response: 'yes',
-            votes: 1,
-        },
-        option2: {
-            response: 'no',
-            votes: 0,
-        },
+        choices: [
+            {
+                response: 'yes',
+                votes: 1,
+            },
+            {
+                response: 'no',
+                votes: 0,
+            }
+        ],
     });
 });
 
 test('endPoll()', expect => {
     newPoll('pizza', 'yes', 'no');
-    vote(1);
+    vote(0);
     endPoll();
 
     expect.deepEqual(state, {
         currentPoll: null,
         completedPolls: [{
             question: 'pizza',
-            option1: {
-                response: 'yes',
-                votes: 1,
-            },
-            option2: {
-                response: 'no',
-                votes: 0,
-            },
+            choices: [
+                {
+                    response: 'yes',
+                    votes: 1,
+                },
+                {
+                    response: 'no',
+                    votes: 0,
+                },
+            ],
         }],
     });
 });

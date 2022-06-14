@@ -9,8 +9,8 @@ export default function createPollForm(root, { handleNewPoll }) {
         const formData = new FormData(form);
         handleNewPoll(
             formData.get('question'),
-            formData.get('option1'),
-            formData.get('option2')
+            formData.get('choice1'),
+            formData.get('choice2')
         );
 
         form.reset();

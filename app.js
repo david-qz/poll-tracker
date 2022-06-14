@@ -12,19 +12,19 @@ import state, { newPoll, vote, unvote, endPoll } from './state.js';
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object
 const PollForm = createPollForm(document.querySelector('#new-poll'), {
-    handleNewPoll: (question, option1, option2) => {
-        newPoll(question, option1, option2);
+    handleNewPoll: (question, choice1, choice2) => {
+        newPoll(question, choice1, choice2);
         display();
     }
 });
 
 const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
-    handleVote: optionNumber => {
-        vote(optionNumber);
+    handleVote: choice => {
+        vote(choice);
         display();
     },
-    handleUnvote: optionNumber => {
-        unvote(optionNumber);
+    handleUnvote: choice => {
+        unvote(choice);
         display();
     },
     handleEndPoll: () => {

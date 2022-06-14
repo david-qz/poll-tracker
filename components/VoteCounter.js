@@ -6,10 +6,10 @@ export default function createVoteCounter(root, { handleVote, handleUnvote, hand
     const [voteOneButton, voteTwoButton, unvoteOneButton, unvoteTwoButton, endPollButton] = root.querySelectorAll('button');
 
     // event listeners
-    voteOneButton.addEventListener('click', () => handleVote(1));
-    voteTwoButton.addEventListener('click', () => handleVote(2));
-    unvoteOneButton.addEventListener('click', () => handleUnvote(1));
-    unvoteTwoButton.addEventListener('click', () => handleUnvote(2));
+    voteOneButton.addEventListener('click', () => handleVote(0));
+    voteTwoButton.addEventListener('click', () => handleVote(1));
+    unvoteOneButton.addEventListener('click', () => handleUnvote(0));
+    unvoteTwoButton.addEventListener('click', () => handleUnvote(1));
     endPollButton.addEventListener('click', () => handleEndPoll());
 
 
