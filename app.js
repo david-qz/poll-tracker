@@ -4,12 +4,17 @@
 import createNewPoll from './components/NewPoll.js';
 
 // import state and dispatch functions
-import state from './state.js';
+import state, { newPoll } from './state.js';
 
 // Create each component:
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object
-const NewPoll = createNewPoll(document.querySelector('#new-poll'));
+const NewPoll = createNewPoll(document.querySelector('#new-poll'), {
+    handleNewPoll: (question, option1, option2) => {
+        newPoll(question, option1, option2);
+        display();
+    }
+});
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
