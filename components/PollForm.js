@@ -12,6 +12,8 @@ export default function createPollForm(root, { handleNewPoll }) {
             formData.get('option1'),
             formData.get('option2')
         );
+
+        form.reset();
     });
 
     // should return its component render function

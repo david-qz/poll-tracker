@@ -3,6 +3,7 @@ import state, {
     newPoll,
     vote,
     unvote,
+    endPoll,
 } from '../state.js';
 
 // make sure state is at known starting point
@@ -73,5 +74,26 @@ test('unvote()', expect => {
             response: 'no',
             votes: 0,
         },
+    });
+});
+
+test('endPoll()', expect => {
+    newPoll('pizza', 'yes', 'no');
+    vote(1);
+    endPoll();
+
+    expect.deepEqual(state, {
+        currentPoll: null,
+        completedPolls: [{
+            question: 'pizza',
+            option1: {
+                response: 'yes',
+                votes: 1,
+            },
+            option2: {
+                response: 'no',
+                votes: 0,
+            },
+        }],
     });
 });

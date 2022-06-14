@@ -47,3 +47,8 @@ export function unvote(option) {
         }
     }
 }
+
+export function endPoll() {
+    state.completedPolls.push(state.currentPoll);
+    state.currentPoll = null;
+}
