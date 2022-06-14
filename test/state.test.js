@@ -83,6 +83,35 @@ test('unvote()', expect => {
     });
 });
 
+test('unvote() clamps at zero', expect => {
+    newPoll('pizza', 'yes', 'no');
+
+    vote(0);
+    vote(0);
+    vote(1);
+
+    unvote(0);
+    unvote(0);
+    unvote(0);
+    unvote(1);
+    unvote(1);
+
+
+    expect.deepEqual(state.currentPoll, {
+        question: 'pizza',
+        choices: [
+            {
+                response: 'yes',
+                votes: 0,
+            },
+            {
+                response: 'no',
+                votes: 0,
+            }
+        ],
+    });
+});
+
 test('endPoll()', expect => {
     newPoll('pizza', 'yes', 'no');
     vote(0);
