@@ -3,8 +3,9 @@
 // import component creators
 
 // import state and dispatch functions
+import state from './state.js';
 
-// Create each component: 
+// Create each component:
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object 
 
