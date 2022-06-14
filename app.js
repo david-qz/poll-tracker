@@ -3,6 +3,7 @@
 // import component creators
 import createPollForm from './components/PollForm.js';
 import createVoteCounter from './components/VoteCounter.js';
+import createPollList from './components/PollList.js';
 
 // import state and dispatch functions
 import state, { newPoll, vote, unvote, endPoll } from './state.js';
@@ -32,10 +33,13 @@ const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
     },
 });
 
+const CompletedPollList = createPollList(document.querySelector('#poll-list'));
+
 // Roll-up display function that renders (calls with state) each component
 function display() {
     PollForm({ currentPoll: state.currentPoll });
     VoteCounter({ currentPoll: state.currentPoll });
+    CompletedPollList({ polls: state.completedPolls });
 }
 
 // Call display on page load

@@ -1,9 +1,13 @@
 export default function createPollDisplay(poll, root) {
+    if (!poll) {
+        return;
+    }
+
     if (!root) {
         root = document.createElement('div');
     }
     root.innerHTML = '';
-    root.classList.add = 'poll-display';
+    root.classList.add('poll-display');
 
     const appendSpan = (text, classes) => {
         const span = document.createElement('span');
