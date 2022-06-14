@@ -22,10 +22,6 @@ main {
     }
 }
 
-.hidden {
-    display: none;
-}
-
 .panel {
     background-color: rgb(187, 223, 255);
     border: 1px solid black;
@@ -127,4 +123,8 @@ label {
 
 .poll-list div {
     max-width: var(--poll-display-width)
+}
+
+.hidden {
+    display: none;
 }
