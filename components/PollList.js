@@ -12,7 +12,9 @@ export default function createPollList(root) {
 
         root.innerHTML = '';
         for (const poll of polls) {
-            root.append(createPollDisplay(poll));
+            const div = createPollDisplay(poll);
+            div.classList.add('panel');
+            root.append(div);
         }
     };
 }

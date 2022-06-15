@@ -23,9 +23,13 @@ main {
 }
 
 .panel {
-    background-color: rgb(187, 223, 255);
-    border: 1px solid black;
-    border-radius: 15px;
+    background-color: #a8db9db9;
+    border: 1px dashed rgb(124, 123, 123);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 form {
@@ -59,12 +63,16 @@ label {
 
 .question {
     grid-area: question;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-decoration: underline;
+    margin-bottom: 10px;
+}
+.option {
+    font-size: 1.1em;
 }
 .votes {
     font-family: monospace;
-    font-size: 3em;
+    font-size: 2em;
 }
 .option.one {
     grid-area: option1;
@@ -90,7 +98,7 @@ label {
     ;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    gap: 10px;
+    gap: 4px;
 }
 
 .vote {
@@ -116,6 +124,7 @@ label {
 .poll-list {
     display: flex;
     flex-flow: row wrap;
+    gap: 20px;
     justify-content: center;
     justify-items: center;
     align-items: center;
