@@ -6,7 +6,7 @@ import createVoteCounter from './components/VoteCounter.js';
 import createPollList from './components/PollList.js';
 
 // import state and dispatch functions
-import state, { newPoll, vote, unvote, endPoll } from './state.js';
+import state, { newPoll, vote, endPoll } from './state.js';
 
 // Create each component:
 const PollForm = createPollForm(document.querySelector('#new-poll'), {
@@ -18,11 +18,11 @@ const PollForm = createPollForm(document.querySelector('#new-poll'), {
 
 const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
     handleVote: choice => {
-        vote(choice);
+        vote(choice, 1);
         display();
     },
     handleUnvote: choice => {
-        unvote(choice);
+        vote(choice, -1);
         display();
     },
     handleEndPoll: () => {

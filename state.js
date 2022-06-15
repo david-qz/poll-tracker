@@ -28,16 +28,10 @@ export function newPoll(question, choice1, choice2) {
     };
 }
 
-export function vote(choiceIndex) {
-    if (state.currentPoll) {
-        state.currentPoll.choices[choiceIndex].votes++;
-    }
-}
-
-export function unvote(choiceIndex) {
+export function vote(choiceIndex, votes = 1) {
     if (state.currentPoll) {
         const choice = state.currentPoll.choices[choiceIndex];
-        choice.votes = Math.max(0, choice.votes - 1);
+        choice.votes = Math.max(0, choice.votes + votes);
     }
 }
 
