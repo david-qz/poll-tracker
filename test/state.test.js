@@ -2,7 +2,6 @@ import state, {
     initialize,
     newPoll,
     vote,
-    unvote,
     endPoll,
 } from '../state.js';
 
@@ -58,15 +57,15 @@ test('vote()', expect => {
     });
 });
 
-test('unvote()', expect => {
+test('vote() negative', expect => {
     newPoll('pizza', 'yes', 'no');
 
     vote(0);
     vote(0);
     vote(1);
+    vote(0, -1);
+    vote(1, -1);
 
-    unvote(0);
-    unvote(1);
 
     expect.deepEqual(state.currentPoll, {
         question: 'pizza',
@@ -90,11 +89,11 @@ test('unvote() clamps at zero', expect => {
     vote(0);
     vote(1);
 
-    unvote(0);
-    unvote(0);
-    unvote(0);
-    unvote(1);
-    unvote(1);
+    vote(0, -1);
+    vote(0, -1);
+    vote(0, -1);
+    vote(1, -1);
+    vote(1, -1);
 
 
     expect.deepEqual(state.currentPoll, {
